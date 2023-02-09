@@ -24,7 +24,7 @@ function invokeAction({ action, id, name, email, phone }) {
     case "list":
       try {
         const result = listContacts();
-        console.log(result);
+        console.table(result);
       } catch (e) {
         console.error(e);
       }
