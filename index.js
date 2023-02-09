@@ -12,11 +12,10 @@ program
   .option("-i, --id <type>", "user id")
   .option("-n, --name <type>", "user name")
   .option("-e, --email <type>", "user email")
-  .option("-p, --phone <type>", "user phone");
+  .option("-p, --phone <type>", "user phone")
+  .action(invokeAction);
 
 program.parse(process.argv);
-
-const argv = program.opts();
 
 function invokeAction({ action, id, name, email, phone }) {
   console.log(action);
@@ -61,5 +60,3 @@ function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
-
-invokeAction(argv);
